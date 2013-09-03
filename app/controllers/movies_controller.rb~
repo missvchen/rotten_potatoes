@@ -1,8 +1,6 @@
 class MoviesController < ApplicationController
 
-  SELECTED_CLASS = "hilite"
-  
-def show
+  def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
@@ -14,8 +12,9 @@ def show
 	      Movie.all
 
     # update css class for sorted column
-    @title_css = SELECTED_CLASS if params[:sort] == "title"
-    @release_date_css = SELECTED_CLASS if params[:sort] == "release_date"
+    @SELECTED_CLASS = "hilite"
+    @title_css = @SELECTED_CLASS if params[:sort] == "title"
+    @release_date_css = @SELECTED_CLASS if params[:sort] == "release_date"
   end
 
   def new

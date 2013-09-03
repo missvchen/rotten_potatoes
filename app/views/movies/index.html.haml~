@@ -6,7 +6,7 @@
     %tr
       %th{ :class => @title_css }= link_to "Movie Title", { :sort => "title" }, { :id => "title_header" }
       %th Rating
-      %th{ :class => @release_date_css }= link_to "Release Date", { :sort => "release_date" }, { :id => "release_date_header" }
+      %th{ :class => @release_date_css}= link_to "Release Date", { :sort => "release_date" }, { :id => "release_date_header" }
       %th More Info
   %tbody
     - @movies.each do |movie|
